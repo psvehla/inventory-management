@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open:*)",
+      "Bash(lsof -ti:3000,8001)",
+      "Bash(xargs kill:*)",
+      "Bash(uv run:*)",
+      "Bash(npm run:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_click",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh pr:*)",
+      "mcp__playwright__browser_console_messages",
+      "Bash(lsof -ti:8001)",
+      "Bash(mkdir:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node -e \"require.resolve\\(''playwright''\\)\")",
+      "Read(//usr/local/lib/**)",
+      "Read(//Users/peter.svehla/.npm/**)",
+      "Bash(npm init:*)",
+      "Bash(node dark-mode-test.mjs)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
