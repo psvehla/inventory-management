@@ -102,93 +102,99 @@ export default {
 
 <style scoped>
 .filters-bar {
-  background: #f8fafc;
-  border-bottom: 1px solid #e2e8f0;
-  padding: 0.75rem 0;
-  position: sticky;
-  top: 70px;
-  z-index: 90;
+  padding: 12px 12px 8px;
 }
 
 .filters-container {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 2rem;
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .filters-grid {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex: 1;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .filter-group {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .filter-group label {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   color: #64748b;
-  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .filter-select {
-  padding: 0.4rem 0.75rem;
-  border: 1px solid #cbd5e1;
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
-  font-size: 0.813rem;
-  color: #0f172a;
-  background: white;
+  font-size: 0.8125rem;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.05);
   cursor: pointer;
   transition: all 0.2s;
   font-weight: 500;
-  min-width: 140px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%2394a3b8' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 28px;
 }
 
 .filter-select:hover {
-  border-color: #94a3b8;
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .filter-select:focus {
   outline: none;
   border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Style the option elements for the dropdown (when open) */
+.filter-select option {
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 4px 8px;
 }
 
 .reset-filters-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem;
-  background: white;
-  border: 1px solid #e2e8f0;
+  width: 100%;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
-  color: #64748b;
+  color: #94a3b8;
   cursor: pointer;
   transition: all 0.2s;
-  flex-shrink: 0;
+  margin-top: 4px;
 }
 
 .reset-filters-btn:hover:not(:disabled) {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: #0f172a;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
 }
 
 .reset-filters-btn:disabled {
-  opacity: 0.3;
+  opacity: 0.2;
   cursor: not-allowed;
 }
 
 .reset-filters-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 </style>
